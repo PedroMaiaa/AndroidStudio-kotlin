@@ -1,0 +1,4 @@
+
+
+rootProject.name = "MySoothe"
+include ':app'

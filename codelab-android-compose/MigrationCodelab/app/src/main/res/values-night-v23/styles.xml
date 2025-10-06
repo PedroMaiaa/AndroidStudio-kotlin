@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<resources>
+
+    <style name="Theme.Sunflower" parent="Base.Theme.Sunflower">
+        <item name="android:navigationBarColor">@color/color_on_surface_20</item>
+    </style>
+
+</resources>

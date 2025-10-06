@@ -1,0 +1,8 @@
+
+<resources>
+    <string name="app_name">Lemonade</string>
+<string name="toque_para_cair">Toque para colher o limão</string>
+<string name="toque_mais">Continue espremendo</string>
+<string name="toque_para_tomar">Hora de beber o suco</string>
+<string name="toque_para_reiniciar">Clique para recomeçar</string>
+</resources>

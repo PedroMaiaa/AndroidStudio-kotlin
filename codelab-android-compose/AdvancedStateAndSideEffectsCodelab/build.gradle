@@ -1,0 +1,50 @@
+
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:8.12.1"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:2.2.20"
+        classpath "com.google.dagger:hilt-android-gradle-plugin:2.57"
+        classpath "org.jetbrains.kotlin:compose-compiler-gradle-plugin:2.2.20"
+    }
+}
+
+plugins {
+    id 'com.diffplug.spotless' version '7.2.1'
+}
+
+subprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    apply plugin: 'com.diffplug.spotless'
+    spotless {
+        kotlin {
+            target '***.kt")
+            targetExclude('bin*.kt')
+            ktlint("0.45.2")
+            licenseHeaderFile rootProject.file('spotless/copyright.kt')
+        }
+    }
+
+    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
+        kotlinOptions {
+            jvmTarget = "1.8"
+
+            
+            freeCompilerArgs += '-opt-in=kotlin.RequiresOptIn'
+        }
+    }
+    
+    configurations.configureEach {
+        resolutionStrategy {
+            force "junit:junit:4.13.2"
+        }
+    }
+}
